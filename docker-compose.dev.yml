@@ -1,5 +1,5 @@
 version: '3'
-name: kposter-backend-dev
+name: kposter_backend_dev
 services:
   mystrapi-dev:
     container_name: mystrapi-dev
