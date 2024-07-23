@@ -10,6 +10,7 @@ RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --only=produc
 ENV PATH /opt/node_modules/.bin:$PATH
 WORKDIR /opt/app
 COPY . .
+RUN ["npm", "run", "strapi", "ts:generate-types"]
 RUN npm run build
 
 # Creating final production image
@@ -25,5 +26,5 @@ ENV PATH /opt/node_modules/.bin:$PATH
 
 RUN chown -R node:node /opt/app
 USER node
-EXPOSE 1337
+EXPOSE ${PORT}
 CMD ["npm", "run", "start"]

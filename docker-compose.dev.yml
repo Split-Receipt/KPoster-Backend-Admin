@@ -1,21 +1,24 @@
 version: '3'
+name: kposter-backend-dev
 services:
-  mystrapi:
-    container_name: mystrapi
-    build: .
+  mystrapi-dev:
+    container_name: mystrapi-dev
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
     image: mystrapi:latest
     restart: unless-stopped
     env_file: .env
     environment:
       DATABASE_CLIENT: ${DATABASE_CLIENT}
-      DATABASE_HOST: mystrapiDB
+      DATABASE_HOST: mystrapiDB-dev
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PORT: ${DATABASE_PORT}
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      NODE_ENV: ${NODE_ENV}
+      NODE_ENV: ${NODE_ENV_DEV}
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
@@ -25,14 +28,14 @@ services:
       - ./.env:/opt/app/.env
       - ./public/uploads:/opt/app/public/uploads
     ports:
-      - '1337:1337'
+      - '${PORT_DEV}:1337'
     networks:
-      - mystrapi
+      - mystrapi-dev
     depends_on:
-      - mystrapiDB
+      - mystrapiDBDev
       
-  mystrapiDB:
-    container_name: mystrapiDB
+  mystrapiDBDev:
+    container_name: mystrapiDB-dev
     platform: linux/amd64 #for platform error on Apple M1 chips
     restart: unless-stopped
     env_file: .env
@@ -42,31 +45,31 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
     volumes:
-      - mystrapi-data:/var/lib/postgresql/data/ #using a volume
-      #- ./data:/var/lib/postgresql/data/ # if you want to use a bind folder
+      # - mystrapi-data:/var/lib/postgresql/data/ #using a volume
+      - /var/lib/postgresql/dev/data:/var/lib/postgresql/data/ # if you want to use a bind folder
 
     ports:
-      - '5432:5432'
+      - '${DATABASE_PORT_DEV}:5432'
     networks:
-      - mystrapi
+      - mystrapi-dev
       
-  mystrapiAdminer:
-    container_name: mystrapiAdminer
-    image: adminer
-    restart: unless-stopped
-    ports:
-      - '9090:8080'
-    environment:
-      - ADMINER_DEFAULT_SERVER=mystrapiDB
-    networks:
-      - mystrapi
-    depends_on:
-      - mystrapiDB
+  # mystrapiAdminer:
+  #   container_name: mystrapiAdminer
+  #   image: adminer
+  #   restart: unless-stopped
+  #   ports:
+  #     - '9090:8080'
+  #   environment:
+  #     - ADMINER_DEFAULT_SERVER=mystrapiDB
+  #   networks:
+  #     - mystrapi
+  #   depends_on:
+  #     - mystrapiDB
 
 volumes:
   mystrapi-data:
 
 networks:
-  mystrapi:
-    name: Mystrapi
+  mystrapi-dev:
+    name: Mystrapi-dev
     driver: bridge
