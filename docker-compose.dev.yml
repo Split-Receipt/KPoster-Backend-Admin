@@ -5,7 +5,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.dev
-    image: mystrapi:latest
+    image: mystrapi:dev
     restart: unless-stopped
     env_file: .env
     environment:
