@@ -1,11 +1,11 @@
-version: '3'
+version: '3.5'
 services:
   mystrapi-dev:
-    container_name: mystrapi-dev
+    container_name: culture-portal-cusco-admin-dev
     build: 
       context: .
       dockerfile: Dockerfile.dev
-    image: mystrapi:dev
+    image: culture-portal-cusco-admin-dev:${APP_VERSION}
     restart: unless-stopped
     env_file: .env
     environment:

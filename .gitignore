@@ -106,6 +106,7 @@ coverage
 ############################
 
 .env
+app-version.env
 license.txt
 exports
 .strapi

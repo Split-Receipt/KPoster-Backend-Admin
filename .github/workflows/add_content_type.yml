@@ -1,0 +1,34 @@
+name: Add Strapi content type from dev to main
+
+on:
+  workflow_dispatch
+
+
+jobs:
+  get-strapi-content-type:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run command on remote server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{secrets.HOST}}
+        username: ${{secrets.HOST_USER}}
+        key: ${{secrets.HOST_KEY}}
+        script: |
+          cd ${{ secrets.PROJECT_FOLDER_DEV }};
+          git checkout main;
+          git pull;
+          npm run strapi ts:generate-types;
+          git add .
+          git commit -m 'Added content types';
+          npm version patch;
+          git push origin main;
+          echo "APP_VERSION=$(cat package.json | grep '"version"' | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')" > app-version.env;
+          docker rmi $(docker images --filter "reference=culture-portal-cusco-admin-dev*" -q);
+          docker compose --env-file app-version.env --env-file .env -f docker-compose.dev.yml up --detach;
+          echo '--- UPDATE PROD ---'
+          cd ${{ secrets.PROJECT_FOLDER_PROD }};
+          git checkout main;
+          git pull;
+          docker rmi $(docker images --filter "reference=culture-portal-cusco-admin-prod*" -q);
+          docker compose --env-file app-version.env --env-file .env -f docker-compose.prod.yml up --detach;

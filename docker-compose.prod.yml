@@ -1,11 +1,11 @@
-version: '3'
+version: '3.5'
 services:
   mystrapi:
-    container_name: mystrapi
+    container_name: culture-portal-cusco-admin
     build: 
       context: .
       dockerfile: Dockerfile.prod
-    image: mystrapi:prd
+    image: culture-portal-cusco-admin-prod:${APP_VERSION}
     restart: unless-stopped
     env_file: .env
     environment:
