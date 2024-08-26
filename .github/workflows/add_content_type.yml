@@ -15,6 +15,7 @@ jobs:
         username: ${{secrets.HOST_USER}}
         key: ${{secrets.HOST_KEY}}
         script: |
+          zsh
           cd ${{ secrets.PROJECT_FOLDER_DEV }};
           git checkout main;
           git pull;
