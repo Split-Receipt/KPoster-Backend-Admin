@@ -18,10 +18,10 @@ jobs:
           export NVM_DIR="$HOME/.nvm";
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";
           [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion";
+          nvm use 18
           cd ${{ secrets.PROJECT_FOLDER_DEV }};
           git checkout main;
           git pull;
-          npm run strapi ts:generate-types;
           git add .
           git commit -m 'Added content types';
           npm version patch;
