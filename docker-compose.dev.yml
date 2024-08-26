@@ -29,7 +29,7 @@ services:
     ports:
       - '1338:1337'
     networks:
-      - mystrapi-dev
+      - mystrapi_network_dev
     depends_on:
       - mystrapiDBDev
       
@@ -50,7 +50,7 @@ services:
     ports:
       - '5433:5432'
     networks:
-      - mystrapi-dev
+      - mystrapi_network_dev
       
   # mystrapiAdminer:
   #   container_name: mystrapiAdminer
@@ -69,6 +69,6 @@ volumes:
   mystrapi-data:
 
 networks:
-  mystrapi-dev:
+  mystrapi_network_dev:
     name: Mystrapi-dev
     driver: bridge
