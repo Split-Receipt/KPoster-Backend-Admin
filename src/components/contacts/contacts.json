@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_contacts_contacts",
+  "info": {
+    "displayName": "Contacts",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "place": {
+      "type": "string",
+      "required": false
+    },
+    "tel": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "email",
+      "required": true
+    }
+  }
+}

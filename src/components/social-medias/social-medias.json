@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_social_medias_social_medias",
+  "info": {
+    "displayName": "socialMedias",
+    "icon": "discuss"
+  },
+  "options": {},
+  "attributes": {
+    "telegram": {
+      "type": "string",
+      "minLength": 5
+    },
+    "twitter": {
+      "type": "string",
+      "required": false,
+      "minLength": 5
+    },
+    "faceBook": {
+      "type": "string",
+      "minLength": 5
+    },
+    "instagram": {
+      "type": "string",
+      "minLength": 5
+    },
+    "youTube": {
+      "type": "string",
+      "minLength": 5
+    },
+    "linkedIn": {
+      "type": "string",
+      "minLength": 5
+    }
+  }
+}
