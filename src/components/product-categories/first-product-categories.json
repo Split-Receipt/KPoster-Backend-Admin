@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_product_categories_first_product_categories",
+  "info": {
+    "displayName": "First Product Categories",
+    "icon": "bell"
+  },
+  "options": {},
+  "attributes": {
+    "cat1_product1": {
+      "type": "string"
+    },
+    "cat1_product2": {
+      "type": "string"
+    },
+    "cat1_product3": {
+      "type": "string"
+    },
+    "cat1_product4": {
+      "type": "string"
+    }
+  }
+}

@@ -66,8 +66,8 @@
     },
     "videoBusinessCard": {
       "type": "media",
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "videos"
       ],
@@ -79,7 +79,7 @@
     },
     "mainBanner": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "allowedTypes": [
         "images"
@@ -90,9 +90,9 @@
         }
       }
     },
-    "compVideo": {
+    "compVideoFile": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "allowedTypes": [
         "videos"
@@ -105,7 +105,7 @@
     },
     "mostPopularProduct": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "allowedTypes": [
         "images"
@@ -135,12 +135,13 @@
       },
       "type": "string"
     },
-    "mainProducts": {
+    "productDescriptionFile": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -148,20 +149,20 @@
       }
     },
     "galleryImages": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ],
-      "type": "media",
-      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      },
-      "required": true
+      }
     },
     "contacts": {
       "displayName": "Contacts",
@@ -173,6 +174,42 @@
         }
       },
       "component": "contacts.contacts"
+    },
+    "productCategories": {
+      "displayName": "Categoties",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "categories.categoties",
+      "required": false
+    },
+    "productDescriptionText": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
+    },
+    "productDescriptionLink": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "compVideoLink": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

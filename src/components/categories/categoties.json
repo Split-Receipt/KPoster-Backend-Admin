@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_categories_categoties",
+  "info": {
+    "displayName": "Categoties",
+    "icon": "play",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "categoryId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
