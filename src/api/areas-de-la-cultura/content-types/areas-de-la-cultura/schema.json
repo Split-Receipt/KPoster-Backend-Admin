@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "areas_de_la_culturas",
+  "info": {
+    "singularName": "areas-de-la-cultura",
+    "pluralName": "areas-de-la-culturas",
+    "displayName": "Areas de la cultura",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "cultureTypeName": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "unique": true
+    },
+    "cultureTypeCode": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "cultureTypeName"
+    }
+  }
+}

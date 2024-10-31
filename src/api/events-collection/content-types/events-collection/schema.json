@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events_collections",
+  "info": {
+    "singularName": "events-collection",
+    "pluralName": "events-collections",
+    "displayName": "Colecciones de eventos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "collectionName": {
+      "type": "string"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "inversedBy": "collection"
+    },
+    "collectionCode": {
+      "type": "uid",
+      "targetField": "collectionName"
+    },
+    "collectionDescription": {
+      "type": "text"
+    }
+  }
+}

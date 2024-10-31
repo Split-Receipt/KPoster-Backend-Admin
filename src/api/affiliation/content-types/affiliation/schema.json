@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "affiliations",
+  "info": {
+    "singularName": "affiliation",
+    "pluralName": "affiliations",
+    "displayName": "Afiliaciones",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "affiliationName": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "affiliationCode": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "affiliationName"
+    }
+  }
+}

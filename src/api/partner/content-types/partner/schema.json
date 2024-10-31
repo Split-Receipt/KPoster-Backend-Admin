@@ -4,7 +4,7 @@
   "info": {
     "singularName": "partner",
     "pluralName": "partners",
-    "displayName": "Partner",
+    "displayName": "Organizadores de eventos",
     "description": ""
   },
   "options": {
@@ -16,16 +16,6 @@
     }
   },
   "attributes": {
-    "orgType": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true,
-      "unique": false
-    },
     "commercialName": {
       "pluginOptions": {
         "i18n": {
@@ -47,15 +37,6 @@
       "unique": false
     },
     "ruc": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
-    "orgLocation": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -93,7 +74,7 @@
     "compVideoFile": {
       "type": "media",
       "multiple": true,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "videos"
       ],
@@ -115,17 +96,6 @@
           "localized": false
         }
       }
-    },
-    "socialMedias": {
-      "displayName": "socialMedias",
-      "type": "component",
-      "repeatable": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "social-medias.social-medias"
     },
     "digitalCatalog": {
       "pluginOptions": {
@@ -231,17 +201,6 @@
       },
       "type": "integer"
     },
-    "cultureType": {
-      "displayName": "Culture Type",
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "culture-type.culture-type"
-    },
     "orgWorkType": {
       "pluginOptions": {
         "i18n": {
@@ -266,17 +225,6 @@
       },
       "type": "string"
     },
-    "affiliations": {
-      "displayName": "affiliation",
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "affiliation.affiliation"
-    },
     "personalDocumentScan": {
       "type": "media",
       "multiple": true,
@@ -300,6 +248,62 @@
         }
       },
       "type": "text"
+    },
+    "affiliations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::affiliation.affiliation"
+    },
+    "areas_de_la_culturas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::areas-de-la-cultura.areas-de-la-cultura"
+    },
+    "orgLocation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "password": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "password",
+      "private": true
+    },
+    "loginEmail": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "email",
+      "private": true
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event",
+      "mappedBy": "eventHost"
+    },
+    "orgType": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "eventHostCode": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "commercialName"
     }
   }
 }

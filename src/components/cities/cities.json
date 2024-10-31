@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_cities_cities",
+  "info": {
+    "displayName": "Cities",
+    "icon": "train"
+  },
+  "options": {},
+  "attributes": {
+    "cityName": {
+      "type": "string"
+    },
+    "cityCode": {
+      "type": "string"
+    }
+  }
+}

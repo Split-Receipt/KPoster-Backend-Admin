@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_social_medias_event_social_medias",
+  "info": {
+    "displayName": "eventSocialMedias",
+    "icon": "cast"
+  },
+  "options": {},
+  "attributes": {
+    "socialMediaName": {
+      "type": "string"
+    },
+    "socialMediaLink": {
+      "type": "string"
+    }
+  }
+}

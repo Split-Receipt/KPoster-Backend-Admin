@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_event_address_addresses",
+  "info": {
+    "displayName": "address",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "address": {
+      "type": "string"
+    },
+    "eventCoordinates": {
+      "type": "string"
+    }
+  }
+}
