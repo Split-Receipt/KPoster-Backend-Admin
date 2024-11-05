@@ -27,6 +27,13 @@
     },
     "collectionDescription": {
       "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Para páginas individuales",
+        "Para principal"
+      ]
     }
   }
 }

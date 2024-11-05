@@ -2,15 +2,23 @@
   "collectionName": "components_social_medias_event_social_medias",
   "info": {
     "displayName": "eventSocialMedias",
-    "icon": "cast"
+    "icon": "cast",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "socialMediaName": {
-      "type": "string"
-    },
     "socialMediaLink": {
       "type": "string"
+    },
+    "socialMediaName": {
+      "type": "enumeration",
+      "enum": [
+        "TikTok",
+        "Twitter",
+        "Facebook",
+        "Instagram",
+        "LinkedIn"
+      ]
     }
   }
 }

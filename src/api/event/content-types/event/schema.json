@@ -172,7 +172,7 @@
       },
       "component": "contacts.contacts"
     },
-    "socialMedia": {
+    "socialMedias": {
       "displayName": "eventSocialMedias",
       "type": "component",
       "repeatable": true,
@@ -182,6 +182,22 @@
         }
       },
       "component": "social-medias.event-social-medias"
+    },
+    "eventDigitalCatalog": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
+    },
+    "eventWebSite": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
     }
   }
 }
