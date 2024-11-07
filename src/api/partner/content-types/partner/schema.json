@@ -254,7 +254,7 @@
       "relation": "oneToMany",
       "target": "api::affiliation.affiliation"
     },
-    "areas_de_la_culturas": {
+    "cultureType": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::areas-de-la-cultura.areas-de-la-cultura"
@@ -309,6 +309,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
+      "private": true,
       "inversedBy": "eventHostData"
     }
   }
