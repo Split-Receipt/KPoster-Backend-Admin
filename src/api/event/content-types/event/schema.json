@@ -172,7 +172,7 @@
       },
       "component": "contacts.contacts"
     },
-    "socialMedias": {
+    "eventSocialMedias": {
       "displayName": "eventSocialMedias",
       "type": "component",
       "repeatable": true,
