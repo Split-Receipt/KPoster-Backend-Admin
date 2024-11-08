@@ -264,24 +264,6 @@
       "relation": "oneToOne",
       "target": "api::city.city"
     },
-    "password": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "password",
-      "private": true
-    },
-    "loginEmail": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "email",
-      "private": true
-    },
     "events": {
       "type": "relation",
       "relation": "oneToMany",
@@ -311,6 +293,16 @@
       "target": "plugin::users-permissions.user",
       "private": true,
       "inversedBy": "eventHostData"
+    },
+    "socialMedias": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "social-medias.event-social-medias"
     }
   }
 }
