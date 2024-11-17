@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_contacts_cultural_portal_contacts",
+  "info": {
+    "displayName": "Cultural Portal Contacts",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "contactName": {
+      "type": "string"
+    },
+    "contactSocialMedias": {
+      "type": "component",
+      "repeatable": true,
+      "component": "social-medias.event-social-medias"
+    },
+    "contacts": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contacts.contacts"
+    }
+  }
+}

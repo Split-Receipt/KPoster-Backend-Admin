@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "cultural_portal_cuscos",
+  "info": {
+    "singularName": "cultural-portal-cusco",
+    "pluralName": "cultural-portal-cuscos",
+    "displayName": "cultural portal Cusco",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "aboutUs": {
+      "displayName": "aboutUs",
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "about.about-us"
+    },
+    "culturalPortalContacts": {
+      "displayName": "Cultural Portal Contacts",
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "contacts.cultural-portal-contacts"
+    }
+  }
+}

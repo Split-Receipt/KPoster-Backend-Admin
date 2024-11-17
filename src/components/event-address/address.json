@@ -14,7 +14,7 @@
     "address": {
       "type": "string"
     },
-    "eventCoordinates": {
+    "coordinates": {
       "type": "string"
     }
   }

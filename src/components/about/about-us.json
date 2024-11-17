@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_about_aboutuses",
+  "info": {
+    "displayName": "aboutUs",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "aboutUsText": {
+      "type": "richtext"
+    }
+  }
+}

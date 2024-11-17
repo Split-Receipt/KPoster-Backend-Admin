@@ -229,6 +229,7 @@
       "type": "media",
       "multiple": true,
       "required": false,
+      "private": true,
       "allowedTypes": [
         "images",
         "files",
@@ -303,6 +304,24 @@
         }
       },
       "component": "social-medias.event-social-medias"
+    },
+    "eventHostAddress": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "event-address.address"
+    },
+    "webpage": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string"
     }
   }
 }
