@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_event_host_tipo_de_organizacions",
+  "info": {
+    "displayName": "Tipo de organización",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "orgTypeCode": {
+      "type": "string"
+    },
+    "orgTypeName": {
+      "type": "string"
+    }
+  }
+}

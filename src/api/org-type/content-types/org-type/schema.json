@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "org_types",
+  "info": {
+    "singularName": "org-type",
+    "pluralName": "org-types",
+    "displayName": "Tipo de organización"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orgTypeName": {
+      "type": "string"
+    },
+    "orgTypeCode": {
+      "type": "uid",
+      "targetField": "orgTypeName",
+      "required": true
+    }
+  }
+}

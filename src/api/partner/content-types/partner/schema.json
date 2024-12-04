@@ -271,14 +271,6 @@
       "target": "api::event.event",
       "mappedBy": "eventHost"
     },
-    "orgType": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
-    },
     "eventHostCode": {
       "pluginOptions": {
         "i18n": {
@@ -322,6 +314,11 @@
         }
       },
       "type": "string"
+    },
+    "orgType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::org-type.org-type"
     }
   }
 }
