@@ -23,5 +23,5 @@ jobs:
           git checkout main;
           git pull;
           echo "APP_VERSION=$(cat package.json | grep '"version"' | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')" > app-version.env;
-          docker rmi $(docker images --filter "reference=culture-portal-cusco-admin-dev*" -q);
-          docker compose --env-file app-version.env --env-file .env -f docker-compose.dev.yml up --detach;
+          docker rmi $(docker images --filter "reference=culture-portal-cusco-admin-prod*" -q);
+          docker compose --env-file app-version.env --env-file .env -f docker-compose.prod.yml up --detach;
