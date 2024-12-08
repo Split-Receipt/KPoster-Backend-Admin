@@ -1,0 +1,22 @@
+name: Add Strapi content type from dev to main
+
+on:
+  workflow_dispatch
+
+
+jobs:
+  get-strapi-content-type:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run command on remote server
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{secrets.PROD_HOST}}
+        username: ${{secrets.PROD_HOST_USER}}
+        key: ${{secrets.PROD_HOST_KEY}}
+        script: |
+          export NVM_DIR="$HOME/.nvm";
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh";
+          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion";
+          nvm use 18
+          cd ${{ secrets.PROJECT_FOLDER_PROD_PROD }};
