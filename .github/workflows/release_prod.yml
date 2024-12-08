@@ -5,7 +5,7 @@ on:
 
 
 jobs:
-  get-strapi-content-type:
+  release:
     runs-on: ubuntu-latest
     steps:
     - name: Run command on remote server
@@ -20,3 +20,8 @@ jobs:
           [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion";
           nvm use 18
           cd ${{ secrets.PROJECT_FOLDER_PROD_PROD }};
+          git checkout main;
+          git pull;
+          echo "APP_VERSION=$(cat package.json | grep '"version"' | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')" > app-version.env;
+          docker rmi $(docker images --filter "reference=culture-portal-cusco-admin-dev*" -q);
+          docker compose --env-file app-version.env --env-file .env -f docker-compose.dev.yml up --detach;
