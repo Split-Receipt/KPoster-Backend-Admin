@@ -1,4 +1,4 @@
-name: Add Strapi content type from dev to main
+name: Release to Production
 
 on:
   workflow_dispatch
