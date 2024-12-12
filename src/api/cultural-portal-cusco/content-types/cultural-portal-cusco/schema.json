@@ -37,6 +37,27 @@
         }
       },
       "component": "contacts.cultural-portal-contacts"
+    },
+    "platformContacts": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "contacts.contacts",
+      "required": true
+    },
+    "platformSocialMedias": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "social-medias.event-social-medias"
     }
   }
 }
