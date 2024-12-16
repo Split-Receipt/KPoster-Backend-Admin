@@ -12,10 +12,12 @@ export default factories.createCoreController('api::events-collection.events-col
 
     // Добавляем свою логику
     const filteredData = data.map(collection => ({
-      ...collection,
-      events: collection.events.filter(event =>
-        new Date(event.eventDate) >= new Date(ctx.query.filters.eventDate.$gte)
-      ),
+      ...collection.attributes,
+      attributes: {
+        events: collection.attributes.events.filter(event =>
+          new Date(event.data.attributes.eventDate) >= new Date(ctx.query.filters.eventDate.$gte)
+        ),
+      }
     }));
 
     // Возвращаем изменённые данные
