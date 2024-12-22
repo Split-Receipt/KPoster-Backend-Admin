@@ -41,7 +41,7 @@
       "type": "uid",
       "targetField": "eventName"
     },
-    "eventDate": {
+    "eventEndDate": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -198,6 +198,14 @@
         }
       },
       "type": "string"
+    },
+    "eventStartDate": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "datetime"
     }
   }
 }
