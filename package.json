@@ -1,7 +1,7 @@
 {
   "name": "cp-backend-admin",
   "private": true,
-  "version": "0.1.36",
+  "version": "0.1.37",
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
