@@ -3,7 +3,7 @@
       const { result } = event;
   
       // Используем данные из .env
-      const recipient = 'nick.panormov@gmail.com';
+      const recipient = 'adm.portalcusco@gmail.com';
 
       const partnerName = result.commercialName ?? result.personalName
   
