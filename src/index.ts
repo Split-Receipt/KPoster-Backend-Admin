@@ -38,7 +38,6 @@ export default {
             const newRole = await strapi
               .query('plugin::users-permissions.role')
               .findOne({ where: { id: newRoleId } });
-
             const roleName = newRole?.name || 'Desconocido';
 
             // Достаём e-mail пользователя (после обновления)
