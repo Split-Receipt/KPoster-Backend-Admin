@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "intstructions_for_event_host",
+  "info": {
+    "singularName": "intstruction-for-event-host",
+    "pluralName": "intstructions-for-event-host",
+    "displayName": "Instrucciones para organizadores."
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "instructions": {
+      "type": "richtext"
+    }
+  }
+}
