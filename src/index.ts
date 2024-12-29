@@ -22,6 +22,7 @@ export default {
 
       // 1) Проверяем, что это - после обновления (afterUpdate)
       // 2) Проверяем, что модель - это плагин users-permissions.user
+      strapi.log.info(model.uid);
       if (
         action === 'afterUpdate' &&
         model.uid === 'plugin::users-permissions.user'
