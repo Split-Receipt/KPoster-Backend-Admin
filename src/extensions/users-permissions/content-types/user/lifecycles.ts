@@ -1,6 +1,7 @@
-const hooks = {
+module.exports = {
   async afterUpdate(event) {
     const { params, result } = event;
+	strapi.log.info('notify module works')
 
     if (params?.data?.role) {
       const newRoleId = params.data.role;
@@ -32,4 +33,4 @@ const hooks = {
 }
 }
 
-export default hooks
+
