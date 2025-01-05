@@ -229,7 +229,6 @@
       "type": "media",
       "multiple": true,
       "required": false,
-      "private": true,
       "allowedTypes": [
         "images",
         "files",
