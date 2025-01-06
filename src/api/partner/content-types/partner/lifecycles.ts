@@ -5,7 +5,7 @@
       // Используем данные из .env
       const recipient = 'adm.portalcusco@gmail.com';
 
-      const partnerName = result.commercialName ?? result.personalName
+      const partnerName = result.commercialName ? result.commercialName : result.personalName
   
       try {
         await strapi.plugins['email'].services.email.send({
