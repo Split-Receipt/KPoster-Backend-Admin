@@ -53,7 +53,7 @@ export default {
             // Отправляем письмо через плагин Email
             await strapi.plugin('email').service('email').send({
               to: userEmail,
-              from: process.env.EMAIL_FROM, // Отправитель из .env
+              from: process.env.SMT_USER, // Отправитель из .env
               subject: 'Cambio de rol en el sitio',
               text: `¡Hola!
 Te saluda el Portal Cultural. Hemos cambiado tu rol dentro del portal y ahora tu rol es:  ${roleName}.

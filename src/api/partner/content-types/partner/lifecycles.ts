@@ -10,7 +10,7 @@
       try {
         await strapi.plugins['email'].services.email.send({
           to: recipient, // Получатель из .env
-          from: process.env.EMAIL_FROM, // Отправитель из .env
+          from: process.env.SMT_USER, // Отправитель из .env
           subject: 'Solicitud de registro de un nuevo organizador',
           text: `Se ha creado un nuevo organizador de eventos:\n\nNombre: ${partnerName}`,
           html: `<p>Se ha creado un nuevo organizador de eventos:</p><ul><li>Nombre: ${partnerName}</li></ul>`,
